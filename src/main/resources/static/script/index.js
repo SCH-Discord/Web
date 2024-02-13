@@ -8,7 +8,7 @@ const toastList = document.getElementById("toastList")
  * @param isError {boolean}
  */
 const addToast = (msg, isError = false) => {
-    const newToast = new HTMLDivElement();
+    const newToast = document.createElement("div");
     newToast.classList.add('toast');
     newToast.setAttribute('role', 'alert');
     newToast.setAttribute('aria-live', 'assertive');
@@ -32,8 +32,9 @@ const addToast = (msg, isError = false) => {
 
     toast.show();
 
-    setTimeout(function() {
+    setTimeout(() => {
         toast.dispose();
+        newToast.remove()
     }, 3000);
 };
 
@@ -56,7 +57,7 @@ const registerWebhook = () => {
     /** @type {HTMLInputElement} */
     const urlInput = document.getElementById("webhook-url");
 
-    axios.post("/api/register", {
+    axios.post("/api/subscribe", {
         url: urlInput.value,
         main: isCheck("notice_main"),
         library: isCheck("notice_library"),
@@ -64,12 +65,15 @@ const registerWebhook = () => {
         student: isCheck("notice_student"),
         sanhak: isCheck("notice_sanhak"),
         sw: isCheck("notice_sw")
-    }).then(res => {
-        console.log(res)
-    }).catch(err => {
-        console.error(err)
-        addToast(err.message, true)
     })
+        .then(res => res.data)
+        .then(data => {
+            addToast(data.message, data.code === -1)
+        })
+        .catch(err => {
+            console.error(err)
+            addToast(err.message, true)
+        })
 }
 
 // 이벤트 리스너 등록

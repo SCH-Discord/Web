@@ -9,21 +9,19 @@
 		<link rel="stylesheet" href="/style/index.css">
 	</head>
 	<body>
-		<nav class="navbar bg-body-tertiary mb-4">
+		<nav class="navbar bg-body-tertiary">
 			<div class="container-fluid">
 				<h1>SCH-Discord</h1>
 			</div>
 		</nav>
 
-		<div class="container ">
-			<div class="d-flex justify-content-center mb-4">
+		<div class="container">
+			<div class="d-flex justify-content-center">
 				<img src="/image/logo.png" class="img-fluid" alt="logo"/>
 			</div>
-
 			<div class="d-flex justify-content-center mb-4">
 				<h2>디스코드를 통해 알림을 받아보세요</h2>
 			</div>
-
 			<div class="d-flex justify-content-center">
 				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalForm">디스코드를 통해 알림 받기</button>
 			</div>
@@ -39,7 +37,7 @@
 
 					<div class="modal-body">
 						<div class="mb-3">
-							<h5><label for="webhook-url">디스코드 웹후크</label></h5>
+							<h5><label for="webhook-url">웹후크 URL</label></h5>
 							<input type="url" class="form-control" id="webhook-url">
 						</div>
 
@@ -85,12 +83,11 @@
 			</div>
 		</div>
 
-		<div id="footer" class="position-absolute bottom-0 d-flex justify-content-center">
-			<!-- todo: github 이슈 링크로 -->
-			<a>ISSUE</a>
+		<div id="footer" class="mt-4 d-flex justify-content-center">
+			<a class="link-dark link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover" href="https://github.com/SCH-Discord/Web/issues" target="_blank">ISSUE</a>
 		</div>
 
-		<div id="toastList" class="toast-container position-absolute bottom-0 end-0 p-3">
+		<div id="toastList" class="toast-container position-absolute bottom-0 end-0">
 
 		</div>
 		<script src="/script/index.js"></script>

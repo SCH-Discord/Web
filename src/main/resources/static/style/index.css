@@ -10,8 +10,16 @@
     --bs-toast-padding-x: 0.5rem;
 }
 
+#toastList {
+    padding-bottom: 50px;
+}
+
 #footer {
     width: 100%;
     border-top: 1px solid;
     padding: 10px;
+    @media screen and (min-height: 580px) {
+        position: absolute!important;
+        bottom: 0!important;
+    }
 }
