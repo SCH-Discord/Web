@@ -15,6 +15,12 @@ java {
 	sourceCompatibility = JavaVersion.VERSION_17
 }
 
+allOpen {
+	annotation("javax.persistence.Entity")
+	annotation("javax.persistence.MappedSuperclass")
+	annotation("javax.persistence.Embeddable")
+}
+
 repositories {
 	mavenCentral()
 }
@@ -37,4 +43,8 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+tasks.bootJar{
+	archiveFileName = "SCH_Discord.jar"
 }
