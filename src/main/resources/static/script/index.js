@@ -66,7 +66,7 @@ const registerWebhook = () => {
         sw: isCheck("notice_sw")
     }).then(res => {
         console.log(res)
-    }).error(err => {
+    }).catch(err => {
         console.error(err)
         addToast(err.message, true)
     })
