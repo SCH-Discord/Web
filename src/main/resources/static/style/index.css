@@ -1,0 +1,17 @@
+.toast-error {
+    border-bottom: 5px solid red;
+}
+
+.toast-success {
+    border-bottom: 5px solid green;
+}
+
+.toast {
+    --bs-toast-padding-x: 0.5rem;
+}
+
+#footer {
+    width: 100%;
+    border-top: 1px solid;
+    padding: 10px;
+}
