@@ -20,9 +20,6 @@ class Subscriber(
 	var student: Boolean,
 
 	@Column(nullable = false)
-	var sanhak: Boolean,
-
-	@Column(nullable = false)
 	var sw: Boolean,
 
 	@Id

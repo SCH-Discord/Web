@@ -63,7 +63,6 @@ const registerWebhook = () => {
         library: isCheck("notice_library"),
         instagram: isCheck("notice_instagram"),
         student: isCheck("notice_student"),
-        sanhak: isCheck("notice_sanhak"),
         sw: isCheck("notice_sw")
     })
         .then(res => res.data)

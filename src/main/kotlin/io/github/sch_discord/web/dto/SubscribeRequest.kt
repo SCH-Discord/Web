@@ -8,7 +8,6 @@ data class SubscribeRequest(
 	val library: Boolean,
 	val instagram: Boolean,
 	val student: Boolean,
-	val sanhak: Boolean,
 	val sw: Boolean
 ) {
 
@@ -20,7 +19,6 @@ data class SubscribeRequest(
 			library = library,
 			instagram = instagram,
 			student = student,
-			sanhak = sanhak,
 			sw = sw
 		)
 	}
