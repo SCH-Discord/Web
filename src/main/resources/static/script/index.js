@@ -61,7 +61,6 @@ const registerWebhook = () => {
         url: urlInput.value,
         main: isCheck("notice_main"),
         library: isCheck("notice_library"),
-        instagram: isCheck("notice_instagram"),
         student: isCheck("notice_student"),
         sw: isCheck("notice_sw")
     })

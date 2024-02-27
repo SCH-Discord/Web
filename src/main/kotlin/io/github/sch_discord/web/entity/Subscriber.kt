@@ -14,9 +14,6 @@ class Subscriber(
 	var library: Boolean,
 
 	@Column(nullable = false)
-	var instagram: Boolean,
-
-	@Column(nullable = false)
 	var student: Boolean,
 
 	@Column(nullable = false)

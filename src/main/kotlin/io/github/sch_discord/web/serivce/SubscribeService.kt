@@ -1,5 +1,6 @@
 package io.github.sch_discord.web.serivce
 
+import io.github.sch_discord.web.dto.DiscordMessage
 import io.github.sch_discord.web.dto.SubscribeRequest
 import io.github.sch_discord.web.dto.SubscribeResult
 import io.github.sch_discord.web.repository.SubscribersRepo
@@ -36,8 +37,9 @@ class SubscribeService(private val repo: SubscribersRepo) {
 			.clientConnector(ReactorClientHttpConnector(httpClient))
 			.build()
 
-		val result = client.get()
+		val result = client.post()
 			.uri(data.url)
+			.bodyValue(DiscordMessage("### 구독되었습니다.\n**구독목록**\n${data.toTextList()}"))
 			.retrieve()
 			.toBodilessEntity()
 			.publishOn(Schedulers.boundedElastic())
