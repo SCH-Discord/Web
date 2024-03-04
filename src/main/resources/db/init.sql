@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS `subscriber` (
+    `id` BIGINT AUTO_INCREMENT PRIMARY KEY,
+    `url` VARCHAR(255) NOT NULL UNIQUE,
+    `main` BOOLEAN NOT NULL,
+    `library` BOOLEAN NOT NULL,
+    `student` BOOLEAN NOT NULL,
+    `sw` BOOLEAN NOT NULL
+);

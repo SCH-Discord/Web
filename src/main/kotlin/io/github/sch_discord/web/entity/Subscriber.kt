@@ -1,25 +1,26 @@
 package io.github.sch_discord.web.entity
 
-import jakarta.persistence.*
+import org.springframework.data.annotation.Id
+import org.springframework.data.relational.core.mapping.Column
+import org.springframework.data.relational.core.mapping.Table
 
-@Entity
+@Table("subscriber")
 class Subscriber(
-	@Column(unique = true, nullable = false)
+	@Column
 	var url: String,
 
-	@Column(nullable = false)
+	@Column
 	var main: Boolean,
 
-	@Column(nullable = false)
+	@Column
 	var library: Boolean,
 
-	@Column(nullable = false)
+	@Column
 	var student: Boolean,
 
-	@Column(nullable = false)
+	@Column
 	var sw: Boolean,
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	var id: Long? = null
 )
