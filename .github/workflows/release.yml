@@ -20,7 +20,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Build with Gradle
-      run: ./gradlew bootJar
+      run: chmod +x ./gradlew && ./gradlew bootJar
 
     - name: Create Release
       id: create_release
